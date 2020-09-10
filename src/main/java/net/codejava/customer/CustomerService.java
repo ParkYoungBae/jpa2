@@ -10,13 +10,16 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class CustomerService {
     @Autowired CustomerRepository repo;
+    @Autowired CustomerDAO        customerDAO;
+
      
     public void save(Customer customer) {
         repo.save(customer);
     }
      
     public List<Customer> listAll() {
-        return (List<Customer>) repo.findAll();
+        //return (List<Customer>) repo.findAll();
+        return (List<Customer>) customerDAO.selectAll();
     }
      
     public Customer get(Long id) {
