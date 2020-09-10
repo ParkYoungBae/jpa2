@@ -3,10 +3,10 @@ package net.codejava.customer;
 import javax.persistence.*;
 
 @Entity
-@SequenceGenerator(name="sessionInfoIdSeq", sequenceName="SQ_CUSTOMER", initialValue = 1, allocationSize = 1)
+@SequenceGenerator(name="SQ_CUSTOMER", sequenceName="SQ_CUSTOMER", initialValue = 1, allocationSize = 1)
 public class Customer {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE , generator="sessionInfoIdSeq")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE , generator="SQ_CUSTOMER")
     private Long id;
  
     private String name;
